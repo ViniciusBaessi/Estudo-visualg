@@ -1,0 +1,495 @@
+// JOGO DA VELHA
+
+Var // Declaração das variáveis para o estudo
+
+matriz: vetor[1..3, 1..3] de inteiro
+
+linha, coluna: inteiro
+contador: inteiro
+jogadas: inteiro
+x: inteiro
+o: inteiro
+
+soma: inteiro
+aux: inteiro
+
+Inicio
+
+//Criando a matriz 3 x 3 ----------------------------------------------------
+
+Escreval ("====== JOGO DA VELHA ======")
+Escreval ("                                         ")
+Para linha <- 1 ate 3 faca
+Para coluna <- 1 ate 3 faca
+
+Fimpara
+Fimpara
+
+// Inserindo os valores na matriz por linha -----------------------------------
+
+linha <- 1
+
+Para contador <- 1 ate 3 faca
+
+matriz[linha,contador] <- contador
+
+FimPara
+
+//-------------------------------
+
+linha <- 2
+
+Para contador <- 1 ate 3 faca
+
+matriz[linha,contador] <- contador + 3
+
+FimPara
+
+//-------------------------------
+
+linha <- 3
+
+Para contador <- 1 ate 3 faca
+
+matriz[linha,contador] <- contador + 6
+
+FimPara
+
+//Printando a matriz na tela  ----------------------------------------------
+
+Para linha <- 1 ate 3 faca
+Para coluna <- 1 ate 3 faca
+Escreva(matriz[linha,coluna]:7)
+
+Fimpara
+Escreval()
+Escreval()
+FimPara
+
+//Mecânica do jogo  ----------------------------------------------
+
+// Seleção do (x) ----------------------------------------------
+
+Enquanto (jogadas <= 11) faca
+
+aux <- 0
+
+Repita
+
+Escreval ("                                         ")
+Escreval ("Vai jogar o [x] em qual posição? ")
+Leia(x)
+
+jogadas <- jogadas + 1
+
+Se (x = 1)e (matriz[1,1] = 1) entao
+matriz[1,1] <- 100
+aux <- 1
+limpatela
+Senao
+
+Se (x = 2)e (matriz[1,2] = 2) entao
+matriz[1,2] <- 100
+aux <- 1
+limpatela
+Senao
+
+Se (x = 3)e (matriz[1,3] = 3) entao
+matriz[1,3] <- 100
+aux <- 1
+limpatela
+Senao
+
+Se (x = 4)e (matriz[2,1] = 4) entao
+matriz[2,1] <- 100
+aux <- 1
+limpatela
+Senao
+
+Se (x = 5)e (matriz[2,2] = 5) entao
+matriz[2,2] <- 100
+aux <- 1
+limpatela
+Senao
+
+Se (x = 6)e (matriz[2,3] = 6) entao
+matriz[2,3] <- 100
+aux <- 1
+limpatela
+Senao
+
+Se (x = 7)e (matriz[3,1] = 7) entao
+matriz[3,1] <- 100
+aux <- 1
+limpatela
+Senao
+
+Se (x = 8)e (matriz[3,2] = 8) entao
+matriz[3,2] <- 100
+aux <- 1
+limpatela
+Senao
+
+Se (x = 9)e (matriz[3,3] = 9) entao
+matriz[3,3] <- 100
+aux <- 1
+limpatela
+Senao
+
+Escreval("Posição inválida!")
+
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+
+ate aux = 1
+
+// print do (x) na tela
+
+Escreval ("====== JOGO DA VELHA ======")
+Escreval ("                                         ")
+
+Para linha <- 1 ate 3 faca
+Para coluna <- 1 ate 3 faca
+
+Se (matriz[linha, coluna] = 70) entao
+escreva("      o")
+
+SeNao
+
+Se (matriz[linha, coluna] = 100) entao
+escreva("      x")
+
+Senao
+Escreva(matriz[linha,coluna]:7)
+
+FimSe
+FimSe
+
+FimPara
+Escreval()
+Escreval()
+FimPara
+
+
+// computando vitórias ----------------------------------------------
+
+//vitória em linha
+
+
+soma <-  matriz[1,2] +  matriz[1,2] + matriz[1,3]
+Se (soma = 300) entao
+jogadas <- 10
+Escreva ("Vitória do (x)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[2,1] +  matriz[2,2] + matriz[2,3]
+Se (soma = 300) entao
+jogadas <- 10
+Escreva ("Vitória do (x)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[3,1] +  matriz[3,2] + matriz[3,3]
+Se (soma = 300) entao
+jogadas <- 10
+Escreva ("Vitória do (x)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//vitória na diagonal
+
+soma <-  matriz[1,1] +  matriz[2,2] + matriz[3,3]
+Se (soma = 300) entao
+jogadas <- 10
+Escreva ("Vitória do (x)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[3,1] +  matriz[2,2] + matriz[1,3]
+Se (soma = 300) entao
+jogadas <- 10
+Escreva ("Vitória do (x)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//vitória em coluna
+
+soma <-  matriz[1,1] +  matriz[2,1] + matriz[3,1]
+Se (soma = 300) entao
+jogadas <- 10
+Escreva ("Vitória do (x)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[1,2] +  matriz[2,2] + matriz[3,2]
+Se (soma = 300) entao
+jogadas <- 10
+Escreva ("Vitória do (x)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[1,3] +  matriz[2,3] + matriz[3,3]
+Se (soma = 300) entao
+jogadas <- 10
+Escreva ("Vitória do (x)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+Se (jogadas = 9) entao
+Escreval ("Deu velha!! O jogo empatou.")
+Fimalgoritmo
+Fimse
+
+
+
+// Seleção do (o) ----------------------------------------------
+
+aux <- 0
+
+Repita
+
+Escreval ("                                         ")
+Escreval ("Vai jogar o [o] em qual posição? ")
+Leia(o)
+
+jogadas <- jogadas + 1
+
+Se (o = 1)e (matriz[1,1] = 1) entao
+matriz[1,1] <- 70
+aux <- 1
+limpatela
+Senao
+
+Se (o = 2)e (matriz[1,2] = 2) entao
+matriz[1,2] <- 70
+aux <- 1
+limpatela
+Senao
+
+Se (o = 3)e (matriz[1,3] = 3) entao
+matriz[1,3] <- 70
+aux <- 1
+limpatela
+Senao
+
+Se (o = 4)e (matriz[2,1] = 4) entao
+matriz[2,1] <- 70
+aux <- 1
+limpatela
+Senao
+
+Se (o = 5)e (matriz[2,2] = 5) entao
+matriz[2,2] <- 70
+aux <- 1
+limpatela
+Senao
+
+Se (o = 6)e (matriz[2,3] = 6) entao
+matriz[2,3] <- 70
+aux <- 1
+limpatela
+Senao
+
+Se (o = 7)e (matriz[3,1] = 7) entao
+matriz[3,1] <- 70
+
+
+aux <- 1
+limpatela
+Senao
+
+Se (o = 8)e (matriz[3,2] = 8) entao
+matriz[3,2] <- 70
+aux <- 1
+limpatela
+Senao
+
+
+Se (o = 9)e (matriz[3,3] = 9) entao
+matriz[3,3] <- 70
+aux <- 1
+limpatela
+Senao
+
+Escreval("Posição inválida!")
+
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+FimSe
+
+ate aux = 1
+
+// print do (x) na tela
+
+Escreval ("====== JOGO DA VELHA ======")
+Escreval ("                                         ")
+
+Para linha <- 1 ate 3 faca
+Para coluna <- 1 ate 3 faca
+
+Se (matriz[linha, coluna] = 70) entao
+escreva("      o")
+
+SeNao
+
+Se (matriz[linha, coluna] = 100) entao
+escreva("      x")
+
+Senao
+Escreva(matriz[linha,coluna]:7)
+
+FimSe
+FimSe
+
+FimPara
+Escreval()
+Escreval()
+FimPara
+
+
+// computando vitórias ----------------------------------------------
+
+//vitória em linha
+
+soma <-  matriz[1,2] +  matriz[1,2] + matriz[1,3]
+Se (soma = 210) entao
+jogadas <- 10
+Escreva ("Vitória do (o)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[2,1] +  matriz[2,2] + matriz[2,3]
+Se (soma = 210) entao
+jogadas <- 10
+Escreva ("Vitória do (o)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[3,1] +  matriz[3,2] + matriz[3,3]
+Se (soma = 210) entao
+jogadas <- 10
+Escreva ("Vitória do (o)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//vitória na diagonal
+
+
+soma <-  matriz[1,1] +  matriz[2,2] + matriz[3,3]
+Se (soma = 210) entao
+jogadas <- 10
+Escreva ("Vitória do (o)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[3,1] +  matriz[2,2] + matriz[1,3]
+Se (soma = 210) entao
+jogadas <- 10
+Escreva ("Vitória do (o)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+
+//vitória em coluna
+
+
+soma <-  matriz[1,1] +  matriz[2,1] + matriz[3,1]
+Se (soma = 210) entao
+jogadas <- 10
+Escreva ("Vitória do (o)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[1,2] +  matriz[2,2] + matriz[3,2]
+Se (soma = 210) entao
+jogadas <- 10
+Escreva ("Vitória do (o)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+soma <-  matriz[1,3] +  matriz[2,3] + matriz[3,3]
+Se (soma = 210) entao
+jogadas <- 10
+Escreva ("Vitória do (o)")
+Fimalgoritmo
+Fimse
+
+soma <- 0
+
+//------------------------------------------------
+
+Se (jogadas = 9) entao
+Escreval ("Deu velha!! O jogo empatou.")
+Fimalgoritmo
+Fimse
+
+
+Fimenquanto
+
+Fimalgoritmo
