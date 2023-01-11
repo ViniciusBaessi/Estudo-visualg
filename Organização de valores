@@ -1,0 +1,36 @@
+// Organiza valores de forma crescrente dentro de um vetor
+
+vetorr: vetor[1..4] de inteiro
+contador: inteiro
+casa: inteiro
+auxiliar: inteiro
+
+Inicio
+
+Para contador <- 1 ate 4 faca
+Escreva("Digite um valor: ")
+Leia(vetorr[contador])
+FimPara
+
+
+// Avanço das casas
+Para contador <- 1 ate 3 faca
+Para casa <- casa+1 ate 4 faca
+
+
+// troca dos valores
+Se(vetorr[contador] > vetorr[casa]) entao
+
+auxiliar <- vetorr[contador]
+vetorr[contador] <- vetorr[casa]
+vetorr[casa] <- auxiliar
+
+Fimse
+
+FimPara
+FimPara
+
+
+Para contador <- 1 ate 4 faca
+Escreva("{", vetorr[contador], "}")
+FimPara
