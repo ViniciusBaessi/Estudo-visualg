@@ -1,0 +1,155 @@
+// Mostrando uma matriz em ângulos diferentes, como se fosse um quadrado
+
+
+Var
+
+matriz: vetor[1..4, 1..4] de inteiro
+
+linha, coluna: inteiro
+opcao: inteiro
+
+
+inicio
+
+
+//Definindo o tamanho e os valores na matriz -----------------------------
+
+
+Escreval ("Temos uma matriz 4 x 4")
+Escreval ("                                         ")
+Para linha <- 1 ate 4 faca
+Para coluna <- 1 ate 4 faca
+
+Escreva ("Digite o valor da posição ",linha," x", coluna, ": ")
+leia (matriz[linha,coluna])
+
+Fimpara
+Fimpara
+
+//Mostrando o menu de opções na tela------------------------------------------
+
+Aleatorio Off
+
+enquanto (opcao < 5) faca
+
+
+EscrevaL ("                      ")
+EscrevaL ("=== MENU DE OPÇÕES ===")
+EscrevaL ("                      ")
+
+EscrevaL ("[1] Mostrar a matriz")
+EscrevaL ("[2] Diagonal principal")
+EscrevaL ("[3] Triangulo superior")
+EscrevaL ("[4] Mostrar inferior")
+EscrevaL ("[5] Sair")
+EscrevaL ("                      ")
+
+Escreva ("Digite a opção desejada: ")
+Leia(opcao)
+
+
+//Opção 1 --------------------------------------------------------
+
+
+Se (opcao = 1) entao
+Limpatela
+
+Para linha <- 1 ate 4 faca
+Para coluna <- 1 ate 4 faca
+Escreva(matriz[linha,coluna]:5)// colando o espaço de 5 casas (visual hehe)
+
+Fimpara
+Escreval()
+FimPara
+
+FimSe
+
+
+
+//Opção 2 --------------------------------------------------------
+
+
+
+Se (opcao = 2) entao
+Limpatela
+
+Para linha <- 1 ate 4 faca
+Para coluna <- 1 ate 4 faca
+
+Se (linha = coluna) entao
+Escreva(matriz[linha,coluna]:5)
+
+Senao
+Escreva(" ":5)
+
+FimSe
+
+Fimpara
+Escreval()
+FimPara
+
+FimSe
+
+
+//Opção 3 --------------------------------------------------------
+
+Se (opcao = 3) entao
+Limpatela
+
+Para linha <- 1 ate 4 faca
+Para coluna <- 1 ate 4 faca
+
+Se (linha > coluna) entao
+Escreva (matriz[linha,coluna]:5)
+Senao
+Escreva(" ":5)
+FimSe
+
+Fimpara
+Escreval()
+
+Fimpara
+
+FimSe
+
+
+//Opção 4 --------------------------------------------------------
+
+
+Se (opcao = 4) entao
+Limpatela
+
+Para linha <- 1 ate 4 faca
+Para coluna <- 1 ate 4 faca
+
+Se (coluna > linha) entao
+Escreva (matriz[linha,coluna]:5)
+Senao
+Escreva(" ":5)
+FimSe
+
+Fimpara
+Escreval()
+
+Fimpara
+
+FimSe
+
+
+//Opção 5 --------------------------------------------------------
+
+
+Se (opcao = 5) entao
+Limpatela
+escreva ("Você escolheu a opção sair!")
+Escreval ("                                         ")
+FimSe
+
+Se (opcao <= 0) entao
+Limpatela
+escreva ("O número escolhido não corresponde à opção desejada!")
+Escreval ("                                         ")
+FimSe
+
+
+FimEnquanto
