@@ -1,0 +1,108 @@
+//Reservar cadeiras no cinema ----------------------------------------------------
+
+Var
+
+
+cadeira: vetor[1..10] de inteiro
+contador: inteiro
+resp: inteiro
+B: caractere
+continua: caractere
+
+
+//Definindo a quantidade de cadeiras -------------------------------------------
+
+Inicio
+
+B <- "B"
+
+Para contador <- 1 ate 10 faca
+cadeira[contador] <-  contador
+FimPara
+
+//Printando as cadeiras na tela  -----------------------------------------------
+
+Repita
+Escreval("-----------------------------------------------------------------")
+Escreval("Cadeiras: ")
+
+
+Para contador <- 1 ate 10 faca
+
+Se (cadeira[contador] > 0) entao
+Escreva("{",B,cadeira[contador],"} ")
+SeNao
+escreva("{---}")
+FimSe
+
+FimPara
+
+//Reserva das cadeiras ---------------------------------------------------------
+
+Escreva("Reservar a cadeira: B")
+leia(resp)
+
+Se (cadeira[resp] > 0) entao
+Escreval("A cadeira B",resp," foi reservada")
+cadeira[resp] <- 0
+Senao
+Escreval("ERRO: lugar ocupado!")
+FimSe
+
+
+//Deseja continuar?  -----------------------------------------------------------
+
+Escreval("Você quer continuar? [S/N]")
+Leia(continua)
+
+Limpatela
+ate (continua = "N") ou (continua = "n")
+Escreval("Agradecemos a reserva, bom filme!!")
+
+
+
+//Aula 15 -------------------------------
+// Vetores 2
+
+//vetores com mais dimensões, ou seja matrizes.
+
+//Preenchendo uma matriz 3x2 usando o teclado
+
+
+var
+
+matriz: vetor[1..2, 1..3] de inteiro
+
+linha, coluna: inteiro
+
+//Definindo o tamanho e os valores na matriz -----------------------------
+
+inicio
+Escreval ("Temos uma matriz com 3 linhas e 2 colunas")
+Escreval ("                                         ")
+Para linha <- 1 ate 2 faca
+Para coluna <- 1 ate 3 faca
+
+Escreva ("Digite o valor da posição ",linha," x", coluna, ": ")
+leia (matriz[linha,coluna])
+
+Fimpara
+Fimpara
+
+
+//Mostrando a matriz na tela------------------------------------------
+
+Escreval ("                                         ")
+Escreval ("Essa é a sua matriz!! ")
+Escreval ("                                         ")
+
+
+Para linha <- 1 ate 2 faca
+Para coluna <- 1 ate 3 faca
+Escreva(matriz[linha,coluna]:5)// colando o espaço de 5 casas (visual
+
+
+Fimpara
+Escreval()
+FimPara
+
