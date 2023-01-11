@@ -1,0 +1,86 @@
+// Corretor de provas
+
+
+// variáveis -------------------------------------------------------------------
+
+gabarito: vetor[1..3] de caractere
+contador: inteiro
+aluno: vetor[1..3] de caractere
+resp: vetor[1..3] de caractere
+nota: vetor[1..3] de inteiro
+media: real
+aux: inteiro
+
+Inicio
+
+// Cadastro do gabarito --------------------------------------------------------
+
+Escreval("----------------")
+Escreval("--- GABARITO ---")
+Escreval("----------------")
+
+Para contador <- 1 até 3 faca
+Escreva("Resposta",contador,": ")
+Leia(gabarito[contador])
+FimPara
+
+LimpaTela
+
+// Cadastro dos alunos ---------------------------------------------------------
+
+
+contador <- 1
+aux <- 1
+
+
+Para contador <- 1 até 3 faca
+
+Escreval ("------------------")
+Escreval ("--- Aluno ",contador,":  ---")
+Escreval ("------------------")
+
+Escreva ("Aluno ",contador,": ")
+Leia(aluno[contador])
+
+// Cadastro das respostas dadas  -----------------------------------------------
+
+
+Escreval ("")
+Escreval ("RESPOSTAS DADAS")
+Escreval ("")
+
+
+Para contador <- 1 até 3 faca
+Escreva("Resposta",contador,": ")
+Leia(resp[contador])
+
+// Validando as respotas certas e aplicando a nota  ----------------------------
+
+
+Se (resp[contador] = gabarito[contador]) entao
+nota[aux] <- nota[aux] + 1
+FimSe
+
+
+FimPara
+aux <- aux + 1
+
+LimpaTela
+FimPara
+
+// Motrando os resultados  -----------------------------------------------------
+
+
+LimpaTela
+Escreval("--------------------")
+Escreval("--- NOTAS FINAIS ---")
+Escreval("--------------------")
+
+Escreval(aluno[1]:10,":",nota[1])
+Escreval(aluno[2]:10,":",nota[2])
+Escreval(aluno[3]:10,":",nota[3])
+
+media <- (nota[1] + nota[2] + nota[3])/3
+Escreval("A média da turma foi ",media)
+
+Fimalgoritmo
