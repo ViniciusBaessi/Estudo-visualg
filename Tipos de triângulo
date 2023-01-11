@@ -1,0 +1,20 @@
+ //Programa que difere um triangulo equilatero de um escaleno e mostra se pode formar um triangulo perfeito.
+
+   Escreva ("Digite o primeiro lado do triangulo: ")//O usuário colocará os valores na tela
+   Leia (L1)
+
+   Escreva ("Digite o segundo lado do triangulo: ")
+   Leia (L2)
+
+   Escreva ("Digite o terceiro lado do triangulo: ")
+   Leia (L3)
+
+   T <-(L1 < L2 + L3) e (L2 < L3 + L1) e (L3 < L1 + L2)//O tringulo pefeiro significa que, cada lado tem que ser menor que a soma dos outros dois
+   EQ <- (L1=L2) e (L2=L3)//equilatero siginifica que todos os valores são iguais
+   ES <- (L1<>L2) e (L2<>L3) e (L1<>L3)//escaleni siginifica que todos os valores são diferentes
+
+   Escreval("O triangulo e equilatero? ",EQ)//Printando na tela TRUE ou FALSE para a resposta.
+   Escreval("O triangulo e escaleno? ",ES)
+   Escreval("O triangulo e perfeito? ",T)
+   
+   Fimalgoritmo
