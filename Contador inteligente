@@ -1,0 +1,45 @@
+//Contador inteligente de um valor até outro.
+//Usuário que escolhe os valores da contagem de um numúmero até outro.
+
+// variáveis cvalor, contador, contador2: inteiro
+
+Procedimento regressiva(var A, B: inteiro)
+inicio
+enquanto (A >= B) faca
+Escreval (A)
+A <- A - 1
+FimEnquanto
+FimProcedimento
+
+
+Procedimento normal(var A, B: inteiro)
+inicio
+
+enquanto (A <= B) faca
+Escreval (A)
+A <- A + 1
+FimEnquanto
+FimProcedimento
+
+inicio  // Começo -------------------------------------------------------
+
+
+Escreval ("Comeco: ")
+Leia (cvalor)
+
+Escreval ("Fim: ")
+Leia(contador2)
+contador <- cvalor
+
+Se (cvalor > contador2) entao
+
+regressiva(cvalor, contador2) //Lista de comandos de contagem regressiva
+
+SeNao
+normal(cvalor, contador2)  //Lista de comandos de contagem normal
+
+FimSe
+
+Escreval ("Terminiei de contar")
+
+Fimalgoritmo
