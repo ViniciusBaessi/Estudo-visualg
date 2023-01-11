@@ -1,0 +1,29 @@
+//Ver o status da partida de acordo com a diferença de gols
+
+//Goleada         3 gols
+//Empate          0 gols
+//Normal          2 gols
+
+
+Escreval ("Quantos gols o Corinthinas fez? ")
+Leia (Corin)
+
+Escreval ("Quantos gols o Flamengo fez? ")
+Leia (Fla)
+
+Diff <- Corin - Fla
+
+Se (Diff <= 3) entao
+Escreva("Normal")
+SeNao
+Se (Diff = 0) entao
+Escreva("Empate")
+SeNao
+Se (Diff >= 3) entao
+Escreva("Goleada")
+
+FimSe
+FimSe
+FimSe
+
+Fimalgoritmo
