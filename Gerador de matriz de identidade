@@ -39,7 +39,7 @@ Escreval ("                                         ")
 
 Para linha <- 1 ate 3 faca
 Para coluna <- 1 ate 3 faca
-Escreva(matrizid[linha,coluna]:5)// colando o espaço de 5 casas (visual hehe)
+Escreva(matrizid[linha,coluna]:5)// colando o espaço de 5 casas 
 
 
 Fimpara
