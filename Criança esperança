@@ -1,0 +1,30 @@
+// Criança esperança
+
+//O comando "escolha" executará uma linha de comando caso o critério seja atendido.
+
+//Ao digitar "1" faz uma função, ao digitar "2" fará outra função e etc...
+
+EscrevaL ("Criança esperança")
+EscrevaL ("[1] Para doar R$ 10")
+EscrevaL ("[2] Para doar R$ 25")
+EscrevaL ("[3] Para doar R$ 50")
+EscrevaL ("[4] Para doar outros valores")
+EscrevaL ("[5] Para cancelar")
+Leia(D)
+Escolha (D)
+Caso 1
+     Valor <- 10
+Caso 2
+     Valor <- 25
+Caso 3
+     Valor <- 50
+Caso 4
+     Escreval("Digite o valor desejado")
+     Leia(Valor)
+Caso 5
+     Valor <- 0
+
+FimEscolha
+     Escreval("Obrigado! A sua doação foi de",Valor," reais!")
+
+Fimalgoritmo
