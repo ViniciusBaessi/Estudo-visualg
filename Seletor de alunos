@@ -1,0 +1,32 @@
+//O programa pergunta quantos alunos tem? Pede o nome e as notas e por fim
+// mostra o melhor aluno de acordo com a nota.
+
+Escreval("Quantos alunos tem dentro de uma turma? ")
+Leia (alunos) //Pergunta quantos alunos tem
+
+contador <- 1 // contador com 1 pois a liguagem entende começa a contar do zero
+
+
+
+//repetindo a estrura de aluno e nota de acordo com a quantidade que o usuário digitar
+enquanto (contador <= alunos) faca
+Escreval ("Qual o nome do aluno: ")
+Leia (nome)
+Escreval ("Qual a nota do aluno: ")
+Leia(Nota)
+
+//Se a nota for maior do que a nota existente, separe-a como melhor aluno, junto ao seu nome
+Se (nota > maiornota) entao
+maiornota <- Nota
+melhoraluno <- nome
+FimSe
+
+//contador recebe 1 para contunuar repetindo a estrutura.
+contador <- contador + 1
+FimEnquanto
+
+//Print do melhor aluno na tela.
+Escreval ("O aluno(a)" , melhoraluno, " obteve a melhor nota: ", maiornota,"!")
+
+Fimalgoritmo
+   
