@@ -1,5 +1,11 @@
  //Programa que difere um triangulo equilatero de um escaleno e mostra se pode formar um triangulo perfeito.
 
+var
+
+L1,L2,L3: Real 
+EQ, ES, T: logico
+
+
    Escreva ("Digite o primeiro lado do triangulo: ")//O usuário colocará os valores na tela
    Leia (L1)
 
